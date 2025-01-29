@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --darkblue: #2A324B;
+    --grey: #58699D;
+    --Lightgrey: #E1E5EE;
+    --white: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", serif;
+    background-color: var(--Lightgrey);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    background-color: white;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    background-color: var(--Lightgrey);
+    gap: 20px;
+}
+
+.tab {
+    padding: 25px 55px;
+    text-align: center;
+    color: var(--white);
+    font-weight: bold;
+    font-size: large;
+    font-family: "Montserrat", serif;
+    border: none;
+    background-color: var(--darkblue);
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+.tab:hover {
+    background-color: #40445c;
+}
+
+.tab.active {
+    background-color: var(--white);
+    color: black;
+}
+
+.content {
+    padding: 40px;
+    text-align: left;
+}
+
+.content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    color: black;
+    font-weight: 550;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    padding-left: 50px;
+}
+
+.content ul li {
+    margin-bottom: 3px;
+}
+
+.content ul li a {
+    font-weight: 550;
+}
+
+.content ul li a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
