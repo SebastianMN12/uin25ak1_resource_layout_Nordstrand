@@ -16,16 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const resource = resources.find(res => res.category === category);
         if (!resource) return;
 
-        //Viser kun lenker på HTML tab
-        const links = category === "HTML" 
-            ? `<ul>${resource.sources.map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`).join("")}</ul>`
-            : null; //Ingen lenker på andre tabs
-
-            contentContainer.innerHTML = `
+        contentContainer.innerHTML = `
             <div class="content">
                 <h1>${resource.category}</h1>
                 <p>${resource.text}</p>
-                ${links || ""}
+                <ul>
+                    ${resource.sources.map(source => `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`).join("")}
+                </ul>
             </div>
         `;
     }
