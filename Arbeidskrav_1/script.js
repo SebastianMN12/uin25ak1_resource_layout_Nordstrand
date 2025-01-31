@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    //henter elementer fra html
     const tabsContainer = document.getElementById("tabs");
     const contentContainer = document.getElementById("content");
 
@@ -7,15 +8,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const tab = document.createElement("button");
         tab.classList.add("tab");
         tab.textContent = resource.category;
-        if (index === 0) tab.classList.add("active"); //Set den første tab som aktiv
+        if (index === 0) tab.classList.add("active"); //Setter html tab som aktiv først
         tabsContainer.appendChild(tab);
     });
 
-    //Funksjon som viser innhold i den aktive tab
+    //Funksjon som viser innhold i den aktive tabben
     function renderContent(category) {
-        const resource = resources.find(res => res.category === category);
+        const resource = resources.find(res => res.category === category);//finner den tilsvarende ressursen
         if (!resource) return;
 
+        //innhold på tab med kategori, tekst og kilder
         contentContainer.innerHTML = `
             <div class="content">
                 <h1>${resource.category}</h1>
